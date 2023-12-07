@@ -48,20 +48,38 @@ h2 {
    justify-content: center;
 }
 
-.each-slide-effect > div {
+a:link {
+    color: black;
+    text-decoration: none;
+    }
+   a:visited {
+    color: purple;
+    text-decoration: none;
+
+   }
+   a:hover {
+     background-color: #1ab28a;
+     text-decoration: none;
+
+   }
+   a:active {
+    color: blue;
+    text-decoration: none;
+
+   }
+
+   .disney-image{
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-size: cover;
-    height: 350px;
-  }
-  
-  .each-slide-effect span {
-    padding: 20px;
-    font-size: 20px;
-    background: #efefef;
-    text-align: center;
-  }
+   }
+
+   .disney-image{
+    width: 100%;
+    height: 500px;
+    object-fit: cover
+    }
+
+
 
 
 

@@ -31,10 +31,6 @@ const DisneyContainer = () => {
         console.log(filter);
     }
 
-
-
-
-
     return ( 
         <>
             <h2>Disney Characters</h2>
