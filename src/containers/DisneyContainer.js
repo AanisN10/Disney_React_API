@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import CharacterList from '../components/CharacterList';
 import SearchCharacter from '../components/SearchCharacter';
 import {useNavigate} from "react-router-dom";
+import "../styles.css" 
 
 
 const DisneyContainer = () => {
