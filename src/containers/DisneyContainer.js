@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
 import CharacterList from '../components/CharacterList';
 import SearchCharacter from '../components/SearchCharacter';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import Home from '../components/Home';
 
 const DisneyContainer = () => {
 
@@ -26,15 +29,37 @@ const DisneyContainer = () => {
         console.log(filter);
     }
 
+    const disneyRoute = createBrowserRouter ([
+        {
+            path: "/",
+            element: <Home/>, 
+            children: [
+                {
+                    path: "/character?pageSize=403",
+                    element: <DisneyContainer
+                                characters={filteredCharacters}
+                                fetchCharacters={fetchCharacters}
+                                handleSearch={handleSearch}
+                  />
+                }
+            ]  
+        }
+        
+
+    ])
+
     return ( 
         <>
+            {/* <nav>
+                <ul>
+                    <Link to="/">Disney Home</Link>
+                </ul>
+            </nav> */}
+            <RouterProvider router={disneyRoute}/>
             <h2>Disney Characters</h2>
-            {/* <SearchCharacter handleSearch={handleSearch}/> */}
-            {/* <CharacterList characters={characters}/> */}
-            {/* <CharacterList characters ={filteredCharacters} /> */}
             <SearchCharacter handleSearch={handleSearch} />
-            {filteredCharacters.length > 0 ? (<CharacterList characters={filteredCharacters}/>) : (<p>No matching characters found.</p>
-      )}
+            {filteredCharacters.length > 0 ? (<CharacterList characters={filteredCharacters}/>) : (<p>No matching characters found.</p>)}
+            {/* <Outlet></Outlet> */}
             
         </>
      );
