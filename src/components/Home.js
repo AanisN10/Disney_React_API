@@ -7,9 +7,10 @@ const Home = () => {
          <>
             <nav>
                 <ul>
-                    <li><Link to="/character?pageSize=403">Characters</Link></li>
+                    <li><Link to="/characters">Characters</Link></li>
                     {/* <li><Link to="/movies">Movies & TV Shows</Link></li> */}
                 </ul>
+                < Outlet />
             </nav>
         </>
         </>

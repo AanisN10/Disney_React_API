@@ -35,8 +35,8 @@ const DisneyContainer = () => {
             element: <Home/>, 
             children: [
                 {
-                    path: "/character?pageSize=403",
-                    element: <DisneyContainer
+                    path: "/characters",
+                    element: <CharacterList
                                 characters={filteredCharacters}
                                 fetchCharacters={fetchCharacters}
                                 handleSearch={handleSearch}
@@ -55,11 +55,12 @@ const DisneyContainer = () => {
                     <Link to="/">Disney Home</Link>
                 </ul>
             </nav> */}
-            <RouterProvider router={disneyRoute}/>
+            
             <h2>Disney Characters</h2>
-            <SearchCharacter handleSearch={handleSearch} />
+            <RouterProvider router={disneyRoute}/>
+            <SearchCharacter handleSearch={handleSearch} /> 
             {filteredCharacters.length > 0 ? (<CharacterList characters={filteredCharacters}/>) : (<p>No matching characters found.</p>)}
-            {/* <Outlet></Outlet> */}
+             {/* <Outlet></Outlet> */}
             
         </>
      );
