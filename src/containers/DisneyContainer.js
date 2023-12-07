@@ -3,6 +3,7 @@ import CharacterList from '../components/CharacterList';
 import SearchCharacter from '../components/SearchCharacter';
 import {useNavigate} from "react-router-dom";
 
+
 const DisneyContainer = () => {
 
     const navigate = useNavigate();
@@ -15,7 +16,7 @@ const DisneyContainer = () => {
         const data = await response.json();
         setCharacters(data.data);
         setFilteredCharacters(data.data);
-        console.log(data.data)
+        // console.log(data.data)
     }
 
     useEffect(() => {
@@ -35,19 +36,14 @@ const DisneyContainer = () => {
 
     return ( 
         <>
-            {/* <nav>
-                <ul>
-                    <Link to="/">Disney Home</Link>
-                </ul>
-            </nav> */}
-            {/* <button onClick={() => navigate('/')}>Go to Disney Home</button> */}
             <h2>Disney Characters</h2>
+           
             <SearchCharacter handleSearch={handleSearch} /> 
-            {filteredCharacters.length > 0 ? (<CharacterList characters={filteredCharacters}/>) : (<p>No matching characters found.</p>)}
-             {/* <Outlet></Outlet> */}
+             <div className='flex-container'>
+                {filteredCharacters.length > 0 ? (<CharacterList characters={filteredCharacters}/>) : (<p>No matching characters found.</p>)}
+            </div>
             
         </>
-     );
+    );
 }
- 
 export default DisneyContainer;

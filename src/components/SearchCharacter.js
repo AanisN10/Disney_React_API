@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "../styles.css" 
 
 
 const SearchCharacter = ({handleSearch}) => {
@@ -12,7 +13,7 @@ const SearchCharacter = ({handleSearch}) => {
     
     return ( 
         <>
-            <form>
+            <form className='form'>
                 <label htmlFor="search"> Filter by Character:</label>
                     <input 
                         placeholder="Search by Character"
@@ -23,7 +24,6 @@ const SearchCharacter = ({handleSearch}) => {
                     />
             </form>
         </>
-     );
+    );
 }
- 
 export default SearchCharacter;

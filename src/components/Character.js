@@ -10,7 +10,6 @@ const Character = ({character}) => {
             </a>
             <hr/>
         </div>
-     );
+    );
 }
- 
 export default Character;
