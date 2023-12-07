@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import CharacterList from '../components/CharacterList';
 import SearchCharacter from '../components/SearchCharacter';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import { Link, Outlet } from "react-router-dom";
-import Home from '../components/Home';
+import {useNavigate} from "react-router-dom";
 
 const DisneyContainer = () => {
+
+    const navigate = useNavigate();
 
     const [characters, setCharacters] = useState([])
     const [filteredCharacters, setFilteredCharacters] = useState([])
@@ -29,24 +29,9 @@ const DisneyContainer = () => {
         console.log(filter);
     }
 
-    const disneyRoute = createBrowserRouter ([
-        {
-            path: "/",
-            element: <Home/>, 
-            children: [
-                {
-                    path: "/characters",
-                    element: <CharacterList
-                                characters={filteredCharacters}
-                                fetchCharacters={fetchCharacters}
-                                handleSearch={handleSearch}
-                  />
-                }
-            ]  
-        }
-        
 
-    ])
+
+
 
     return ( 
         <>
@@ -57,7 +42,7 @@ const DisneyContainer = () => {
             </nav> */}
             
             <h2>Disney Characters</h2>
-            <RouterProvider router={disneyRoute}/>
+            <button onClick={() => navigate('/')}>Go to Disney Home</button>
             <SearchCharacter handleSearch={handleSearch} /> 
             {filteredCharacters.length > 0 ? (<CharacterList characters={filteredCharacters}/>) : (<p>No matching characters found.</p>)}
              {/* <Outlet></Outlet> */}

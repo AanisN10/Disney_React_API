@@ -12,8 +12,7 @@ function App() {
         children: [
             {
                 path: "/characters",
-                element: <DisneyContainer
-              />
+                element: <DisneyContainer/>
             }
         ]  
     }
