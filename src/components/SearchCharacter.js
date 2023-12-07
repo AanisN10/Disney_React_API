@@ -9,11 +9,6 @@ const SearchCharacter = ({handleSearch}) => {
         setFilteredCharacter(event.target.value)
         handleSearch(event.target.value)
     }
-
-    // const handleSubmit = (event) => {
-    //     event.preventDefault()
-    //     handleSearch(filteredCharacter)
-    // }
     
     return ( 
         <>
@@ -26,7 +21,6 @@ const SearchCharacter = ({handleSearch}) => {
                         onChange={handleChange}
                         id="search"
                     />
-                {/* <button type="submit">Submit</button> */}
             </form>
         </>
      );
