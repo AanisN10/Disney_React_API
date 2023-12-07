@@ -1,20 +1,16 @@
 import { Link, Outlet } from "react-router-dom";
 
-const Home = () => {
 
-    return ( 
+const Home = () => {
+    return (
         <>
-         <>
             <nav>
-                <ul>
-                    <li><Link to="/characters">Characters</Link></li>
-                    {/* <li><Link to="/movies">Movies & TV Shows</Link></li> */}
-                </ul>
-                < Outlet />
+                <button><Link to ="/">Go to Disney Home</Link></button>
+                <button><Link to ="/characters">Characters</Link></button>
             </nav>
+            <Outlet />
+        
         </>
-        </>
-     );
+    );
 }
- 
 export default Home;

@@ -40,9 +40,8 @@ const DisneyContainer = () => {
                     <Link to="/">Disney Home</Link>
                 </ul>
             </nav> */}
-            
+            {/* <button onClick={() => navigate('/')}>Go to Disney Home</button> */}
             <h2>Disney Characters</h2>
-            <button onClick={() => navigate('/')}>Go to Disney Home</button>
             <SearchCharacter handleSearch={handleSearch} /> 
             {filteredCharacters.length > 0 ? (<CharacterList characters={filteredCharacters}/>) : (<p>No matching characters found.</p>)}
              {/* <Outlet></Outlet> */}
